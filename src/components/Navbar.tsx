@@ -40,7 +40,7 @@ export default function Navbar() {
               src="/logo.png"
               alt="Photography Portfolio Logo"
               fill
-              className="object-contain object-left mix-blend-screen brightness-110"
+              className="object-contain object-left mix-blend-screen brightness-110 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
               priority
             />
           </div>
