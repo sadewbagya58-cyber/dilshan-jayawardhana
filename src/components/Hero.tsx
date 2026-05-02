@@ -1,8 +1,9 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface HeroImage {
   url: string;
@@ -15,16 +16,7 @@ interface HeroProps {
 
 export default function Hero({ images }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
   
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   // Fallback images if Sanity returns none
   const displayImages = images.length > 0 ? images : [
     { url: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop', alt: 'Wedding Photography' },
@@ -34,82 +26,83 @@ export default function Hero({ images }: HeroProps) {
 
   useEffect(() => {
     if (displayImages.length <= 1) return;
-    
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % displayImages.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, [displayImages.length]);
 
   return (
-    <section
-      ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center"
-    >
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
+    <section className="relative w-full min-h-[90vh] bg-black flex flex-col justify-center pt-24">
+      <div className="boxy-container w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+        
+        {/* Text Content */}
+        <div className="order-2 lg:order-1 space-y-8">
+          <motion.h1 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-4xl md:text-6xl xl:text-7xl heading-bold text-white max-w-xl"
+          >
+            We Capture the Most Magical Moments of Your Life
+          </motion.h1>
+          
+          <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
-            className="absolute inset-0"
-            style={{ y, opacity }}
+            transition={{ delay: 0.3 }}
+            className="text-sm md:text-base tracking-[0.2em] uppercase text-white/50 max-w-md leading-relaxed"
           >
-            <Image
-              src={displayImages[currentIndex].url}
-              alt={displayImages[currentIndex].alt}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover opacity-60 grayscale"
-            />
+            Every Moment Has a Story. Every Story Deserves to Be Eternal.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <Link href="/#gallery" className="inline-block sharp-button">
+              Explore Now
+            </Link>
           </motion.div>
-        </AnimatePresence>
+        </div>
+
+        {/* Image Slideshow Box */}
+        <div className="order-1 lg:order-2 relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] border border-white/10 overflow-hidden bg-muted">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={displayImages[currentIndex].url}
+                alt={displayImages[currentIndex].alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </motion.div>
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
       </div>
 
-      {/* Soft Top-down shadow for Logo/Navbar visibility */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-[50] pointer-events-none" />
-      
-      {/* Bottom-up gradient for ground feel */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-[15] pointer-events-none" />
-
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-8 md:px-12">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-          className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white mb-6 leading-tight"
-        >
-          Dilshan Jayawardhana
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
-          className="text-xs sm:text-sm md:text-lg tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl leading-relaxed"
-        >
-          Every Moment Has a Story. Every Story Deserves to Be Eternal.
-        </motion.p>
+      {/* Structured Stats/Footer info bar */}
+      <div className="border-t border-white/5 py-8 bg-muted/30">
+        <div className="boxy-container flex flex-wrap gap-8 justify-between items-center text-[10px] uppercase tracking-[0.4em] text-white/30">
+          <div>Wedding Photography</div>
+          <div className="hidden sm:block">|</div>
+          <div>Cinematography</div>
+          <div className="hidden sm:block">|</div>
+          <div>Preshoot Sessions</div>
+        </div>
       </div>
-      
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
-      >
-        <span className="text-xs tracking-[0.2em] text-white/50 uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-[1px] h-12 bg-white/50"
-        />
-      </motion.div>
     </section>
   );
 }
+

@@ -3,19 +3,19 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #a3a3a3;
+  --accent: #222222;
+  --muted: #111111;
+  --muted-foreground: #888888;
   --border: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
@@ -26,13 +26,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Luxury Typography selection */
 ::selection {
   background: #ffffff;
   color: #000000;
 }
+
+/* Professional Overhaul Utilities */
+.heading-bold {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.boxy-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sharp-button {
+  background: #1a1a1a;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 1.25rem 2.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #333333;
+}
+
+.sharp-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
