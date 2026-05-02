@@ -47,10 +47,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden relative z-[60] text-white"
+          className="md:hidden relative z-[60] text-white/50 hover:text-white transition-colors p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? null : <Menu size={28} strokeWidth={1} />}
         </button>
 
         {/* Mobile Menu Overlay */}
@@ -60,21 +60,38 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center"
+              className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-50 flex flex-col items-center justify-center pt-24"
             >
-              <ul className="flex flex-col items-center space-y-10">
-                {menuLinks.map((link) => (
-                  <li key={link.name}>
+              {/* Close Button Inside Overlay */}
+              <button
+                className="absolute top-8 right-6 text-white/50 hover:text-white transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X size={32} strokeWidth={1} />
+              </button>
+
+              <ul className="flex flex-col items-center space-y-12">
+                {menuLinks.map((link, i) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-3xl font-bold uppercase tracking-[0.4em] text-white/50 hover:text-white"
+                      className="text-3xl font-light uppercase tracking-[0.4em] text-white/40 hover:text-[#c5a059] transition-all duration-500"
                     >
                       {link.name}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
+              
+              <div className="absolute bottom-12 text-[9px] uppercase tracking-[0.5em] text-white/20">
+                Dilshan Jayawardhana
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
