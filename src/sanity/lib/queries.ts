@@ -1,14 +1,11 @@
 import { groq } from 'next-sanity';
 
-export const getFeaturedImageQuery = groq`
-  *[_type == "galleryImage" && featured == true][0] {
+export const getHeroImagesQuery = groq`
+  *[_type == "galleryImage" && featured == true] | order(_createdAt desc) {
     _id,
     title,
     image,
-    alt,
-    clientName,
-    location,
-    "categoryTitle": category->title
+    alt
   }
 `;
 
