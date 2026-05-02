@@ -31,14 +31,15 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-12">
+        <ul className="hidden md:flex items-center space-x-16">
           {menuLinks.map((link) => (
             <li key={link.name}>
               <Link 
                 href={link.href} 
-                className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors duration-300"
+                className="text-[9px] font-light uppercase tracking-[0.4em] text-white/40 hover:text-white transition-all duration-500 relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-500 group-hover:w-full" />
               </Link>
             </li>
           ))}
