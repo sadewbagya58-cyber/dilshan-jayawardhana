@@ -62,19 +62,19 @@ export default function Hero({ images }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-12"
           >
             <div className="space-y-4">
-              <span className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-white/40 block mb-4">
+              <span className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-white/30 block mb-4 drop-shadow-md">
                 Timeless Memories, Beautifully Captured
               </span>
-              <h1 className="text-4xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.2em] text-white leading-tight">
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.15em] text-[#eeeeee] leading-tight drop-shadow-2xl">
                 Dilshan <br className="md:hidden" /> Jayawardhana
               </h1>
             </div>
 
-            <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white/60 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white/50 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-lg">
               We are Capturing the moments of today <br className="hidden md:block" /> that will wow your hearts tomorrow.
             </p>
 
@@ -86,11 +86,10 @@ export default function Hero({ images }: HeroProps) {
             >
               <Link 
                 href="/#gallery" 
-                className="group relative inline-block px-12 py-4 border border-white/20 text-[10px] uppercase tracking-[0.5em] text-white overflow-hidden transition-all duration-500 hover:border-white"
+                className="group relative inline-block px-12 py-4 border border-white/10 text-[10px] uppercase tracking-[0.5em] text-[#eeeeee] overflow-hidden transition-all duration-700 hover:border-[#c5a059]"
               >
-                <span className="relative z-10">Explore Portfolio</span>
-                <div className="absolute inset-0 bg-white translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
-                <span className="absolute inset-0 flex items-center justify-center text-black opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:z-20">Explore Portfolio</span>
+                <span className="relative z-10 group-hover:text-[#c5a059] transition-colors duration-500">Explore Portfolio</span>
+                <div className="absolute inset-x-0 bottom-0 h-[1px] bg-[#c5a059] scale-x-0 transition-transform duration-700 group-hover:scale-x-100" />
               </Link>
             </motion.div>
           </motion.div>

@@ -16,10 +16,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] h-24 bg-black border-b border-white/10 flex items-center">
+    <nav className="fixed top-0 left-0 w-full z-[100] h-24 bg-background/80 backdrop-blur-lg border-b border-white/5 flex items-center">
       <div className="boxy-container w-full flex items-center justify-between">
-        <Link href="/" className="flex items-center relative z-[60]">
-          <div className="relative w-40 h-16">
+        <Link href="/" className="flex items-center relative z-[60] group">
+          <div className="relative w-40 h-16 transition-transform duration-500 group-hover:scale-[1.02]">
             <Image
               src="/logo.png"
               alt="Photography Portfolio Logo"
@@ -36,10 +36,10 @@ export default function Navbar() {
             <li key={link.name}>
               <Link 
                 href={link.href} 
-                className="text-[9px] font-light uppercase tracking-[0.4em] text-white/40 hover:text-white transition-all duration-500 relative group"
+                className="text-[9px] font-light uppercase tracking-[0.4em] text-white/40 hover:text-[#c5a059] transition-all duration-500 relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#c5a059] transition-all duration-500 group-hover:w-full" />
               </Link>
             </li>
           ))}

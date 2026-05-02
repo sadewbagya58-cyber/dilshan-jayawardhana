@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --accent: #222222;
-  --muted: #111111;
-  --muted-foreground: #888888;
-  --border: #333333;
+  --background: #0a0a0a;
+  --foreground: #eeeeee;
+  --accent: #c5a059;
+  --muted: #121212;
+  --muted-foreground: #777777;
+  --border: #1a1a1a;
 }
 
 @theme inline {
@@ -50,18 +50,33 @@ html {
 }
 
 .sharp-button {
-  background: #1a1a1a;
-  color: #ffffff;
+  background: #111111;
+  color: #eeeeee;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.2em;
   padding: 1.25rem 2.5rem;
-  transition: all 0.3s ease;
-  border: 1px solid #333333;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .sharp-button:hover {
-  background: #ffffff;
-  color: #000000;
+  border-color: var(--accent);
+  color: var(--accent);
 }
+
+.grain-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
 
