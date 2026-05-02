@@ -18,9 +18,9 @@ export default function Hero({ images }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const displayImages = images.length > 0 ? images : [
-    { url: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop', alt: 'Wedding Photography' },
-    { url: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop', alt: 'Bridal Photography' },
-    { url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop', alt: 'Portrait' }
+    { url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop', alt: 'Vibrant Wedding Ceremony' },
+    { url: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop', alt: 'Sunset Bridal Portrait' },
+    { url: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop', alt: 'Colorful Celebration' }
   ];
 
   useEffect(() => {
@@ -49,11 +49,11 @@ export default function Hero({ images }: HeroProps) {
               alt={displayImages[currentIndex].alt}
               fill
               priority
-              className="object-cover grayscale opacity-50"
+              className="object-cover opacity-60"
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
       </div>
 
       {/* Modern Luxury Content Overlay */}
