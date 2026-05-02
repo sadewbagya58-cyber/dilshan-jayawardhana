@@ -71,12 +71,12 @@ export default function Hero({ images }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
       </div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center px-8 md:px-12">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-          className="text-5xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.2em] text-white mb-6"
+          className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white mb-6 leading-tight"
         >
           Dilshan Jayawardhana
         </motion.h1>
@@ -85,7 +85,7 @@ export default function Hero({ images }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
-          className="text-sm md:text-lg tracking-[0.3em] uppercase text-gray-300 max-w-2xl"
+          className="text-xs sm:text-sm md:text-lg tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gray-300 max-w-xs sm:max-w-md md:max-w-2xl leading-relaxed"
         >
           Every Moment Has a Story. Every Story Deserves to Be Eternal.
         </motion.p>
