@@ -68,11 +68,13 @@ export default function Hero({ images }: HeroProps) {
             />
           </motion.div>
         </AnimatePresence>
-        {/* Top-down gradient for Navbar readability */}
-        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/80 via-black/30 to-transparent z-10 pointer-events-none" />
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
       </div>
+
+      {/* Top-down gradient for Navbar readability - High intensity */}
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/95 via-black/50 to-transparent z-[15] pointer-events-none" />
+      
+      {/* Bottom-up gradient for ground feel */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-[15] pointer-events-none" />
 
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-8 md:px-12">
         <motion.h1
