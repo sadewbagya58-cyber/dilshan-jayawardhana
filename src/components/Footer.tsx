@@ -11,52 +11,34 @@ export default function Footer() {
             <h3 className="text-xl font-light uppercase tracking-[0.2em] text-white">
               Dilshan Jayawardhana
             </h3>
-            <p className="text-sm tracking-widest uppercase text-white/50">
-              Timeless Elegance in Every Frame
+            <p className="text-[10px] tracking-widest uppercase text-white/40 max-w-xs">
+              We are Capturing the moments of today that will wow your hearts tomorrow.
             </p>
-          </div>
-
-          <div className="flex flex-col items-center space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white mb-2">Connect</h4>
-            <div className="flex items-center space-x-6 text-sm tracking-widest uppercase">
-              <Link 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
-              >
-                FB
-              </Link>
-              <Link 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
-              >
-                IG
-              </Link>
-              <a 
-                href="mailto:contact@example.com" 
-                className="hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
-              >
-                MAIL
-              </a>
+            <div className="text-[10px] tracking-[0.2em] uppercase text-white/30 space-y-1">
+              <p>Dambulla, Sri Lanka</p>
             </div>
           </div>
 
-          <div className="flex flex-col md:items-end space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white mb-2">Inquiries</h4>
-            <Link 
-              href="#contact" 
-              className="text-sm tracking-widest uppercase hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
-            >
-              Book a Session
-            </Link>
+          <div className="flex flex-col items-center space-y-6">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-white">Connect</h4>
+            <div className="flex flex-col items-center space-y-3 text-[10px] tracking-[0.3em] uppercase">
+              <a href="tel:0762697606" className="hover:text-white transition-colors">076 269 7606</a>
+              <a href="tel:0764620385" className="hover:text-white transition-colors">076 462 0385</a>
+              <a href="mailto:dilshanjayawardhanaphotography@gmail.com" className="hover:text-white transition-colors">Email Us</a>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:items-end space-y-6">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-white">Follow</h4>
+            <div className="flex items-center space-x-6 text-[10px] tracking-[0.3em] uppercase">
+              <Link href="https://facebook.com" target="_blank" className="hover:text-white">FB</Link>
+              <Link href="https://instagram.com" target="_blank" className="hover:text-white">IG</Link>
+            </div>
           </div>
         </div>
 
-        <div className="text-center pt-8 border-t border-white/5 flex flex-col items-center space-y-4">
-          <p className="text-xs tracking-[0.15em] uppercase text-white/40">
+        <div className="text-center pt-8 border-t border-white/5">
+          <p className="text-[9px] tracking-[0.2em] uppercase text-white/20">
             &copy; 2026 Dilshan Jayawardhana Photography & Cinematography. All Rights Reserved.
           </p>
         </div>

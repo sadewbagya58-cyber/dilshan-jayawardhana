@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Dilshan Jayawardhana Photography & Cinematography | Timeless Elegance',
-  description: 'Premium wedding photography and cinematography in Sri Lanka. Specializing in capturing timeless elegance through weddings, preshoots, and bridal sessions.',
-  keywords: ['wedding photography sri lanka', 'cinematography sri lanka', 'best wedding photographer colombo', 'luxury wedding photography', 'dilshan jayawardhana', 'timeless elegance photography'],
+  title: 'Dilshan Jayawardhana Photography & Cinematography | Dambulla, Sri Lanka',
+  description: 'Official portfolio of Dilshan Jayawardhana Photography & Cinematography. We are capturing the moments of today that will wow your hearts tomorrow. Premium wedding photography and cinematography in Dambulla, Sri Lanka.',
+  keywords: ['wedding photography sri lanka', 'cinematography sri lanka', 'best wedding photographer dambulla', 'luxury wedding photography', 'dilshan jayawardhana', 'photography dambulla'],
   authors: [{ name: 'Dilshan Jayawardhana' }],
   openGraph: {
     title: 'Dilshan Jayawardhana Photography & Cinematography',
-    description: 'Capturing Timeless Elegance in Sri Lanka.',
+    description: 'We are capturing the moments of today that will wow your hearts tomorrow.',
     url: 'https://dilshanjayawardana.com',
     siteName: 'Dilshan Jayawardhana Photography',
     images: [

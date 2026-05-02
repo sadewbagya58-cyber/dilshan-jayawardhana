@@ -43,16 +43,25 @@ export default function Hero({ images }: HeroProps) {
             animate={{ opacity: 1, x: 0 }}
             className="text-4xl md:text-6xl xl:text-7xl heading-bold text-white max-w-xl"
           >
-            We Capture the Most Magical Moments of Your Life
+            Dilshan Jayawardhana
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-sm md:text-base tracking-[0.2em] uppercase text-white/50 max-w-md leading-relaxed"
+            className="text-sm md:text-base tracking-[0.2em] uppercase text-white/70 max-w-lg leading-relaxed"
           >
-            Every Moment Has a Story. Every Story Deserves to Be Eternal.
+            We are Capturing the moments of today that will wow your hearts tomorrow.
+          </motion.p>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-white/40"
+          >
+            FROM OUR TEAM TO YOUR HEART - TIMELESS MEMORIES, BEAUTIFULLY CAPTURED.
           </motion.p>
           
           <motion.div
