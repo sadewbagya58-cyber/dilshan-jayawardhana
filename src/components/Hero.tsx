@@ -70,8 +70,8 @@ export default function Hero({ images }: HeroProps) {
         </AnimatePresence>
       </div>
 
-      {/* Ultra-dark Top-down shadow for Logo/Navbar visibility */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black via-black/80 to-transparent z-[50] pointer-events-none" />
+      {/* Soft Top-down shadow for Logo/Navbar visibility */}
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-[50] pointer-events-none" />
       
       {/* Bottom-up gradient for ground feel */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-[15] pointer-events-none" />
