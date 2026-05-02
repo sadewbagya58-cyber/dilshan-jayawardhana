@@ -53,7 +53,7 @@ export default function Hero({ imageUrl, altText }: HeroProps) {
           transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
           className="text-5xl md:text-7xl lg:text-8xl font-light uppercase tracking-[0.2em] text-white mb-6"
         >
-          Dilshan Jyawardana
+          Dilshan Jayawardhana
         </motion.h1>
 
         <motion.p
@@ -62,7 +62,7 @@ export default function Hero({ imageUrl, altText }: HeroProps) {
           transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
           className="text-sm md:text-lg tracking-[0.3em] uppercase text-gray-300 max-w-2xl"
         >
-          Capturing Timeless Elegance
+          Every Moment Has a Story. Every Story Deserves to Be Eternal.
         </motion.p>
       </div>
       
